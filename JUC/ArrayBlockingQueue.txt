@@ -1,0 +1,5 @@
+ArrayBlockingQueue对于学习AQS是一个很好的用例。我们从底往上来分析。
+一、关系图谱
+    见ArrayBlockingQueue.png
+二、lock(:ReentrantLock).lockInterruptibly能够将使用线程放入sync队列中管理。
+三、notFull/notEmpty(:lock.newCondition).await/.signal能够将等待被唤醒的线程放入Conditions
